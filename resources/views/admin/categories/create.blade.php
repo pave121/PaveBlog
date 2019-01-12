@@ -4,9 +4,9 @@
     
     @include('admin.includes.errors')
 
-    <div class="panel panel-default" style="font-weight:bold">
+    <div class="panel panel-info">
         <div class="panel-heading">
-            Create a new Category
+            <center><b><h4>Create a new Category</h4></b></center>
         </div>
         
         <div class="panel-body">

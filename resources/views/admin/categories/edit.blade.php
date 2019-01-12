@@ -4,9 +4,9 @@
     
     @include('admin.includes.errors')
 
-    <div class="panel panel-default">
+    <div class="panel panel-info">
         <div class="panel-heading">
-            Update Category: {{ $category->name }}
+            <center><b><h4>Update Category: {{ $category->name }}</h4></b></center>
         </div>
         
         <div class="panel-body">

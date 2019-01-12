@@ -2,7 +2,11 @@
 
 
 @section('content')
-<div class="panel panel-default">
+<div class="panel panel-info">
+        <div class="panel-heading">
+      <center><b><h4>All Categories</h4></b></center>
+   </div>
+        
     <div class="panel-body">
         
         <table class="table table-hover">
@@ -22,25 +26,31 @@
             </thead>
 
             <tbody>
-
+                @if($categories->count() > 0)
                 @foreach($categories as $category)
                     <tr>
                       <td>
                         {{ $category->name }}
                      </td>
                      <td>
-                         <a href="{{ route('category.edit', ['id' => $category->id]) }}" class="btn btn-s btn-info">
+                         <a href="{{ route('category.edit', ['id' => $category->id]) }}" class="btn btn-xs btn-info">
                              Edit
                          </a>
                      </td>
                      <td>
-                         <a href="{{ route('category.delete', ['id' => $category->id]) }}" class="btn btn-s btn-danger">
+                         <a href="{{ route('category.delete', ['id' => $category->id]) }}" class="btn btn-xs btn-danger">
                              Delete
                          </a>
                      </td>
                     </tr>
                 @endforeach
-
+                @else
+                
+                    <tr>
+                        <th colspan="5" class="text-center">There are no categories created</th>
+                    </tr>
+                
+                @endif
             </tbody>
 
         </table>
