@@ -2,7 +2,12 @@
 
 
 @section('content')
-<div class="panel panel-default">
+<div class="panel panel-info">
+   
+   <div class="panel-heading">
+      <center><b><h4>All Posts</h4></b></center>
+   </div>
+   
     <div class="panel-body">
         
         <table class="table table-hover">
