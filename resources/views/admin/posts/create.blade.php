@@ -5,8 +5,8 @@
     @include('admin.includes.errors')
 
     <div class="panel panel-info">
-        <div class="panel-heading">
-            <center><b><h4>Create a new post</h4></b></center>
+        <div class="panel-heading naslov">
+            <h4>Create a new post</h4>
         </div>
         
         <div class="panel-body">

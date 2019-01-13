@@ -4,7 +4,7 @@
 @section('content')
 <div class="panel panel-info">
         <div class="panel-heading naslov">
-      <h4>All Categories</h4>
+      <h4>All Tags</h4>
    </div>
         
     <div class="panel-body">
@@ -13,7 +13,7 @@
 
             <thead>
                 <th>
-                    Category Name
+                    Tag Name
                 </th>
 
                 <th>
@@ -26,19 +26,19 @@
             </thead>
 
             <tbody>
-                @if($categories->count() > 0)
-                @foreach($categories as $category)
+                @if($tags->count() > 0)
+                @foreach($tags as $tag)
                     <tr>
                       <td>
-                        {{ $category->name }}
+                        {{ $tag->tag }}
                      </td>
                      <td>
-                         <a href="{{ route('category.edit', ['id' => $category->id]) }}" class="btn btn-xs btn-info">
+                         <a href="{{ route('tag.edit', ['id' => $tag->id]) }}" class="btn btn-xs btn-info">
                              Edit
                          </a>
                      </td>
                      <td>
-                         <a href="{{ route('category.delete', ['id' => $category->id]) }}" class="btn btn-xs btn-danger">
+                         <a href="{{ route('tag.delete', ['id' => $tag->id]) }}" class="btn btn-xs btn-danger">
                              Delete
                          </a>
                      </td>
@@ -47,7 +47,7 @@
                 @else
                 
                     <tr>
-                        <th colspan="5" class="text-center">There are no categories created</th>
+                        <th colspan="5" class="text-center">There are no tags created</th>
                     </tr>
                 
                 @endif

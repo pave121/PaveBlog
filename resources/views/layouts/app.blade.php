@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
 </head>
 <body>
     <div id="app">
@@ -100,6 +101,12 @@
                         </li>
                         <li class="list-group-item">
                             <a href="{{ route('posts.trashed') }}">All trashed posts</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('tags') }}">Tags</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('tag.create') }}">Create Tag</a>
                         </li>
                     </ul>
                 </div>

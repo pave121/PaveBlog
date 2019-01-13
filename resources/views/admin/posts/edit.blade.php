@@ -4,9 +4,9 @@
     
     @include('admin.includes.errors')
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Edit post: {{ $post->title }}
+    <div class="panel panel-info">
+        <div class="panel-heading naslov">
+            <h4>Edit post: {{ $post->title }}</h4>
         </div>
         
         <div class="panel-body">

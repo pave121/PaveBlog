@@ -6,23 +6,23 @@
 
     <div class="panel panel-info">
         <div class="panel-heading naslov">
-            <h4>Update Category: {{ $category->name }}</h4>
+            <h4>Create a new Tag</h4>
         </div>
         
         <div class="panel-body">
             
-            <form action="{{ route('category.update', ['id' => $category->id]) }}" method="post">
+            <form action="{{ route('tag.store') }}" method="post">
                 
                 {{ csrf_field() }}
                 
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" class="form-control" value="{{ $category->name }}">
+                    <input type="text" name="tag" class="form-control">
                 </div>
                 <div class="text-center">
                     
                     <div class="form-group">
-                        <button class="btn btn-success" type="submit">Update category</button>
+                        <button class="btn btn-success" type="submit">Store Tag</button>
                     </div>
 
                 </div>
