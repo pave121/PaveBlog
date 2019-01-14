@@ -80,38 +80,50 @@
                
                 <div class="col-lg-4">
                     <ul class="list-group">
-                        
-                        <li class="list-group-item">
+                        <li class="list-group-item izbornik">
                             <a href="{{ route('home') }}">Home</a>
                         </li>
-                           
-                        <li class="list-group-item">
-                            <a href="{{ route('category.create') }}">Create new category</a>
+                          <li class="list-group-item">
+                              <b>CATEGORIES</b>
+                          </li>
+                               
+                        <li class="list-group-item izbornik">
+                            <a href="{{ route('categories') }}">All Categories</a>
                         </li>
-                           
-                        <li class="list-group-item">
-                            <a href="{{ route('categories') }}">Categories</a>
+                        
+                        <li class="list-group-item izbornik">
+                            <a href="{{ route('category.create') }}">Create New Category</a>
                         </li>
+                         <li class="list-group-item">
+                              <b>POSTS</b>
+                          </li>  
                             
-                        <li class="list-group-item">
-                            <a href="{{ route('post.create') }}">Create new post</a>
+                        <li class="list-group-item izbornik">
+                            <a href="{{ route('posts') }}">All Posts</a>
+                        </li>
+                        
+                        <li class="list-group-item izbornik">
+                            <a href="{{ route('post.create') }}">Create a New Post</a>
+                        </li>
+                        <li class="list-group-item izbornik">
+                            <a href="{{ route('posts.trashed') }}">Trashed Posts</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="{{ route('posts') }}">All posts</a>
+                              <b>TAGS</b>
+                          </li> 
+                        <li class="list-group-item izbornik">
+                            <a href="{{ route('tags') }}">All Tags</a>
                         </li>
-                        <li class="list-group-item">
-                            <a href="{{ route('posts.trashed') }}">All trashed posts</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{ route('tags') }}">Tags</a>
-                        </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item izbornik">
                             <a href="{{ route('tag.create') }}">Create Tag</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="{{ route('users') }}">Users</a>
+                              <b>USERS</b>
+                          </li> 
+                        <li class="list-group-item izbornik">
+                            <a href="{{ route('users') }}">All Users</a>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item izbornik">
                             <a href="{{ route('user.create') }}">New User</a>
                         </li>
                     </ul>
