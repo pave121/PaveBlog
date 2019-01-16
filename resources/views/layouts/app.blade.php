@@ -8,12 +8,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Pave\'s Blog') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/stil.css') }}">
+    
+    @yield('styles')
+    
 </head>
 <body>
     <div id="app">
@@ -117,15 +120,29 @@
                         <li class="list-group-item izbornik">
                             <a href="{{ route('tag.create') }}">Create Tag</a>
                         </li>
-                        <li class="list-group-item">
-                              <b>USERS</b>
-                          </li> 
-                        <li class="list-group-item izbornik">
-                            <a href="{{ route('users') }}">All Users</a>
-                        </li>
-                        <li class="list-group-item izbornik">
-                            <a href="{{ route('user.create') }}">New User</a>
-                        </li>
+                        
+                        @if(Auth::user()->admin)
+                        
+                            <li class="list-group-item">
+                                  <b>USERS</b>
+                              </li> 
+                            <li class="list-group-item izbornik">
+                                <a href="{{ route('users') }}">All Users</a>
+                            </li>
+                            <li class="list-group-item izbornik">
+                                <a href="{{ route('user.create') }}">New User</a>
+                            </li>
+                        
+                        @endif
+                        
+                            <li class="list-group-item izbornik">
+                                <a href="{{ route('user.profile') }}">My Profile</a>
+                            </li>
+                         @if(Auth::user()->admin)   
+                            <li class="list-group-item izbornik">
+                                <a href="{{ route('settings') }}">Site Settings</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
                 
@@ -156,5 +173,8 @@
             
         @endif
     </script>
+    
+    @yield('scripts')
+    
 </body>
 </html>
