@@ -10,7 +10,7 @@
                             <span class="long-line"></span>
                         </div>
                         <p class="heading-text">
-                        {{ $settings->about }}
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi rem repudiandae temporibus illum eaque molestiae veritatis at quod error sed quos, asperiores, sit enim vel, repellat praesentium tempore inventore libero.</lore>
                         </p>
                     </div>
                 </div>

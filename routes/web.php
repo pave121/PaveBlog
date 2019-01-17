@@ -16,6 +16,15 @@ Route::get('/', [
     'as' => 'index'
 ]);
 
+Route::get('/{slug}', [
+    'uses' => 'FrontEndController@singlePost',
+    'as' => 'post.single'
+]);
+
+Route::get('/auth/login', [
+    'uses' => 'auth\LoginController@showLoginForm',
+    'as' => 'auth.login'
+]);
 
 Auth::routes();
 

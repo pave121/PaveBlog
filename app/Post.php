@@ -11,6 +11,7 @@ class Post extends Model
     use SoftDeletes;
     
     protected $fillable = [
+        'user_id',
         'title',
         'content',
         'category_id',
@@ -33,5 +34,10 @@ class Post extends Model
     public function tags(){
         
         return $this->belongsToMany('App\Tag');
+    }
+    
+    public function author(){
+        
+        return $this->belongsTo('App\User');
     }
 }

@@ -3,7 +3,7 @@
                 <div class="header-content-wrapper">
                     <div class="logo">
                         <div class="logo-text">
-                            <div class="logo-title">{{ $title }}</div>
+                            <div class="logo-title">{{ $settings->site_name }}</div>
                         </div>
                     </div>
 
@@ -19,6 +19,10 @@
                         </a>
                         <ul class="primary-menu-menu" style="overflow: hidden;">
                            
+                           <li style="padding-right:50px">
+                                <a href="{{ route('auth.login') }}">Login</a>
+                           </li>
+                           
                            @foreach($categories as $category)
                            
                             <li class="">
@@ -30,7 +34,7 @@
                     </nav>
                     <ul class="nav-add">
                         <li class="search search_main" style="color: black; margin-top: 5px;">
-                            <a href="#" class="js-open-search">
+                               <a href="#" class="js-open-search">
                                 <i class="seoicon-loupe"></i>
                             </a>
                         </li>
