@@ -26,7 +26,7 @@
                            @foreach($categories as $category)
                            
                             <li class="">
-                                <a href="">{{ $category->name }}</a>
+                                <a href="{{ route('category', ['category' => $category->name]) }}">{{ $category->name }}</a>
                             </li>
                             
                             @endforeach

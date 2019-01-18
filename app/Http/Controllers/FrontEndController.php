@@ -26,12 +26,25 @@ class FrontEndController extends Controller
     public function singlePost($slug){
         
         $post = Post::where('slug', $slug)->first();
-        $author = User::where('id', $post->id)->first();
+        $author = User::where('id', $post->user_id)->first();
         
         return view('single')->with('post', $post)
                              ->with('title', Setting::first()->site_name)
                              ->with('categories', Category::take(5)->get())
                              ->with('settings', Setting::first())
                              ->with('author', $author);
+    }
+    
+    public function category($category){
+        
+        $cat_id = Category::where('name', $category)->first();
+        $posts = Post::where('category_id', $cat_id->id)->get();
+
+        
+        return view('category')->with('posts', $posts)
+            ->with('title', Setting::first()->site_name)
+            ->with('settings', Setting::first())
+            ->with('categories', Category::take(5)->get())
+            ->with('category', $cat_id);
     }
 }

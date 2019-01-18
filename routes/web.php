@@ -26,6 +26,11 @@ Route::get('/auth/login', [
     'as' => 'auth.login'
 ]);
 
+Route::get('/category/{category}', [
+    'uses' => 'FrontEndController@category',
+    'as' => 'category'
+]);
+
 Auth::routes();
 
 

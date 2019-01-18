@@ -12,15 +12,18 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         App\Category::create([
-            'name' => 'HTML'
+            'name' => 'HTML',
+            'num_of_posts' => 5
         ]);
         
         App\Category::create([
-            'name' => 'CSS'
+            'name' => 'CSS',
+            'num_of_posts' => 5
         ]);
         
         App\Category::create([
-            'name' => 'Laravel'
+            'name' => 'Laravel',
+            'num_of_posts' => 5
         ]);
         
     }
