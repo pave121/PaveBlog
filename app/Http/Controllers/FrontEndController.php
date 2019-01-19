@@ -7,38 +7,43 @@ use App\Setting;
 use App\Category;
 use App\Post;
 use App\User;
+use App\Profile;
 
 class FrontEndController extends Controller
 {
     public function index(){
         
-        return view('index')
-            ->with('title', Setting::first()->site_name)
-            ->with('categories', Category::take(3)->get())
-            ->with('first_post', Post::orderBy('created_at', 'desc')->first())
-            ->with('second_post', Post::orderBy('created_at', 'desc')->skip(1)->take(1)->get()->first())
-            ->with('third_post', Post::orderBy('created_at', 'desc')->skip(2)->take(1)->get()->first())
-            ->with('php', Category::find(1))
-            ->with('laravel', Category::find(2))
-            ->with('settings', Setting::first());
+        $posts = Post::orderBy('created_at', 'desc')->take(3)->get();
+        $categories = Category::orderBy('num_of_posts','desc')->take(3)->get();
+        
+        return view('index', [
+            'categories' => $categories,
+            'posts' => $posts,
+        ]);
+           
     }
     
     public function singlePost($slug){
         
         $post = Post::where('slug', $slug)->first();
-        $author = User::where('id', $post->user_id)->first();
+        $author = $post->author;
+        $profile = $author->profile;
+        $categories = Category::take(5)->get();
         
-        return view('single')->with('post', $post)
-                             ->with('title', Setting::first()->site_name)
-                             ->with('categories', Category::take(5)->get())
-                             ->with('settings', Setting::first())
-                             ->with('author', $author);
+        return view('single', [
+            'categories' => $categories,
+            'author' => $author,
+            'profile' => $profile,
+            'post' => $post
+        ]);
+                             
+                             
     }
     
     public function category($category){
         
         $cat_id = Category::where('name', $category)->first();
-        $posts = Post::where('category_id', $cat_id->id)->get();
+        $posts = $cat_id->posts;
 
         
         return view('category')->with('posts', $posts)

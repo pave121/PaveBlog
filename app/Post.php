@@ -28,7 +28,7 @@ class Post extends Model
         
     public function category(){
         
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Category', 'id');
     }
     
     public function tags(){
@@ -38,6 +38,6 @@ class Post extends Model
     
     public function author(){
         
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 }

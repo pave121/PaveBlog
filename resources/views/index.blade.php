@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>{{ $title }}</title>
+    <title>{{ $settings->site_name }}</title>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('app/css/fonts.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('app/css/crumina-fonts.css') }}">
@@ -53,9 +53,9 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="{{ $first_post->featured }}" alt="seo">
+                            <img src="{{ $posts[0]->featured }}" alt="seo">
                             <div class="overlay"></div>
-                            <a href="{{ $first_post->featured }}" class="link-image js-zoom-image">
+                            <a href="{{ $posts[0]->featured }}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
                             <a href="#" class="link-post">
@@ -68,7 +68,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title text-center">
-                                        <a href="{{ route('post.single', ['slug' => $first_post->slug]) }}">{{ $first_post->title }}</a>
+                                        <a href="{{ route('post.single', ['slug' => $posts[0]->slug]) }}">{{ $posts[0]->title }}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -78,14 +78,14 @@
                                             <i class="seoicon-clock"></i>
 
                                             <time class="published" datetime="2016-04-17 12:00:00">
-                                                {{ $first_post->created_at->diffForHumans() }}
+                                                {{ $posts[0]->created_at->diffForHumans() }}
                                             </time>
 
                                         </span>
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{ $first_post->category->name }}</a>
+                                            <a href="#">{{ $posts[0]->category->name }}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -107,9 +107,9 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="{{ $second_post->featured }}" alt="seo">
+                            <img src="{{ $posts[1]->featured }}" alt="seo">
                             <div class="overlay"></div>
-                            <a href="{{ $second_post->featured }}" class="link-image js-zoom-image">
+                            <a href="{{ $posts[1]->featured }}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
                             <a href="#" class="link-post">
@@ -122,7 +122,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title text-center">
-                                        <a href="15_blog_details.html">{{ $second_post->title }}</a>
+                                        <a href="{{ route('post.single', ['slug' => $posts[1]->slug]) }}">{{ $posts[1]->title }}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -132,14 +132,14 @@
                                             <i class="seoicon-clock"></i>
 
                                             <time class="published" datetime="2016-04-17 12:00:00">
-                                                {{ $second_post->created_at->toFormattedDateString() }}
+                                                {{ $posts[1]->created_at->toFormattedDateString() }}
                                             </time>
 
                                         </span>
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{ $second_post->category->name }}</a>
+                                            <a href="#">{{ $posts[1]->category->name }}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -157,9 +157,9 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="{{ $third_post->featured }}" alt="seo">
+                            <img src="{{ $posts[2]->featured }}" alt="seo">
                             <div class="overlay"></div>
-                            <a href="{{ $third_post->featured }}" class="link-image js-zoom-image">
+                            <a href="{{ $posts[2]->featured }}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
                             <a href="#" class="link-post">
@@ -172,7 +172,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title text-center">
-                                        <a href="15_blog_details.html">{{ $third_post->title }}</a>
+                                        <a href="{{ route('post.single', ['slug' => $posts[2]->slug]) }}">{{ $posts[2]->title }}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -182,14 +182,14 @@
                                             <i class="seoicon-clock"></i>
 
                                             <time class="published" datetime="2016-04-17 12:00:00">
-                                                {{ $third_post->created_at->toFormattedDateString() }}
+                                                {{ $posts[2]->created_at->toFormattedDateString() }}
                                             </time>
 
                                         </span>
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{ $third_post->category->name }}</a>
+                                            <a href="#">{{ $posts[2]->category->name }}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -215,7 +215,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                             <div class="heading">
-                                <h4 class="h1 heading-title">{{ $php->name }}</h4>
+                                <h4 class="h1 heading-title">{{ $categories[0]->name }}</h4>
                                 <div class="heading-line">
                                     <span class="short-line"></span>
                                     <span class="long-line"></span>
@@ -226,7 +226,7 @@
                     <div class="row">
                         <div class="case-item-wrap">
                             
-                            @foreach($php->posts()->orderBy('created_at', 'desc')->take(3)->get() as $post)
+                            @foreach($categories[0]->posts()->orderBy('created_at', 'desc')->take(3)->get() as $post)
                             
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                 <div class="case-item">
@@ -246,7 +246,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                             <div class="heading">
-                                <h4 class="h1 heading-title">{{ $laravel->name }}</h4>
+                                <h4 class="h1 heading-title">{{ $categories[1]->name }}</h4>
                                 <div class="heading-line">
                                     <span class="short-line"></span>
                                     <span class="long-line"></span>
@@ -256,7 +256,7 @@
                     </div>
                     <div class="row">
                         <div class="case-item-wrap">
-                            @foreach($laravel->posts()->orderBy('created_at', 'desc')->take(3)->get() as $post)
+                            @foreach($categories[1]->posts()->orderBy('created_at', 'desc')->take(3)->get() as $post)
                             
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                 <div class="case-item">

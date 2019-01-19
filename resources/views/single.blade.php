@@ -38,7 +38,7 @@
                                 <i class="seoicon-clock"></i>
 
                                 <time class="published" datetime="2016-03-20 12:00:00">
-                                    March 20, 2016
+                                    {{ $post->created_at->toFOrmattedDateString() }}
                                 </time>
 
                             </span>
@@ -161,7 +161,7 @@
                 <div class="blog-details-author">
 
                     <div class="blog-details-author-thumb">
-                        <img src="app/img/blog-details-author.png" alt="Author">
+                        <img src="{{ $profile->avatar }}" alt="Author">
                     </div>
 
                     <div class="blog-details-author-content">
