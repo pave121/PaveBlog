@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Tag;
 use Session;
 
-class TagsController extends Controller
+class TagsController extends BaseController
 {
     /**
      * Display a listing of the resource.

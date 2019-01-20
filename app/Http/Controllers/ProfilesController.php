@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Session;
 
-class ProfilesController extends Controller
+class ProfilesController extends BaseController
 {
     /**
      * Display a listing of the resource.

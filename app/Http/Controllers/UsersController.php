@@ -7,7 +7,7 @@ use App\User;
 use App\Profile;
 use Session;
 
-class UsersController extends Controller
+class UsersController extends BaseController
 {
     public function __construct(){
         

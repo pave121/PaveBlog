@@ -8,7 +8,7 @@ use App\Post;
 use Session;
 use App\Tag;
 
-class PostsController extends Controller
+class PostsController extends BaseController
 {
     /**
      * Display a listing of the resource.

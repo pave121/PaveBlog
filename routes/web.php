@@ -31,6 +31,11 @@ Route::get('/category/{category}', [
     'as' => 'category'
 ]);
 
+Route::get('/user/posts/{id}', [
+    'uses' => 'FrontEndController@userPosts',
+    'as' => 'user.posts'
+]);
+
 Auth::routes();
 
 

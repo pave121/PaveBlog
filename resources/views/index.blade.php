@@ -85,12 +85,12 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{ $posts[0]->category->name }}</a>
+                                            <a href="{{ route('category', ['category' => $posts[0]->category->name]) }}">{{ $posts[0]->category->name }}</a>
                                         </span>
 
                                         <span class="post__comments">
                                             <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
-                                            6
+                                            Br. Komentara
                                         </span>
 
                                     </div>
@@ -139,12 +139,12 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{ $posts[1]->category->name }}</a>
+                                            <a href="{{ route('category', ['category' => $posts[1]->category->name]) }}">{{ $posts[1]->category->name }}</a>
                                         </span>
 
                                         <span class="post__comments">
                                             <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
-                                            6
+                                            Br. komentara
                                         </span>
 
                                     </div>
@@ -189,12 +189,12 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{ $posts[2]->category->name }}</a>
+                                            <a href="{{ route('category', ['category' => $posts[2]->category->name]) }}">{{ $posts[2]->category->name }}</a>
                                         </span>
 
                                         <span class="post__comments">
                                             <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
-                                            6
+                                            Br. komentara
                                         </span>
 
                                     </div>
@@ -233,7 +233,10 @@
                                     <div class="case-item__thumb">
                                         <img src="{{ $post->featured }}" alt="our case">
                                     </div>
-                                    <h6 class="case-item__title text-center"><a href="#">{{ $post->title }}</a></h6>
+                                    <h6 class="case-item__title text-center">
+                                    <a href="{{ route('post.single', ['slug' => $post->slug ]) }}">
+                                    {{ $post->title }}
+                                    </a></h6>
                                 </div>
                             </div>    
                             
@@ -263,7 +266,10 @@
                                     <div class="case-item__thumb">
                                         <img src="{{ $post->featured }}" alt="our case">
                                     </div>
-                                    <h6 class="case-item__title text-center"><a href="#">{{ $post->title }}</a></h6>
+                                    <h6 class="case-item__title text-center">
+                                    <a href="{{ route('post.single', ['slug' => $post->slug ]) }}">
+                                    {{ $post->title }}
+                                    </a></h6>
                                 </div>
                             </div>    
                             

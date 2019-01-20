@@ -8,8 +8,9 @@ use App\Category;
 use App\Post;
 use App\User;
 use App\Profile;
+use App\Tag;
 
-class FrontEndController extends Controller
+class FrontEndController extends BaseController
 {
     public function index(){
         
@@ -29,12 +30,14 @@ class FrontEndController extends Controller
         $author = $post->author;
         $profile = $author->profile;
         $categories = Category::take(5)->get();
-        
+        $tags = Tag::all();
+
         return view('single', [
             'categories' => $categories,
             'author' => $author,
             'profile' => $profile,
-            'post' => $post
+            'post' => $post,
+            'tags' => $tags
         ]);
                              
                              
@@ -51,5 +54,18 @@ class FrontEndController extends Controller
             ->with('settings', Setting::first())
             ->with('categories', Category::take(5)->get())
             ->with('category', $cat_id);
+    }
+    
+    public function userPosts($id){
+        
+        $posts = Post::all()->where('user_id', $id);
+        $categories = Category::all();
+        $user = User::find($id);
+        
+        return view('userPost', [
+            'posts' => $posts,
+            'categories' => $categories,
+            'user' => $user
+        ]);
     }
 }

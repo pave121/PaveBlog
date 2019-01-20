@@ -28,7 +28,7 @@
                                 Posted by
 
                                 <div class="post__author-name fn">
-                                    <a href="#" class="post__author-link">{{ $author->name }}</a>
+                                    <a href="{{ route('user.posts', ['user' => $author->id]) }}" class="post__author-link">{{ $author->name }}</a>
                                 </div>
 
                             </div>
@@ -252,15 +252,13 @@
                         </div>
 
                         <div class="tags-wrap">
-                            <a href="#" class="w-tags-item">SEO</a>
-                            <a href="#" class="w-tags-item">Advertising</a>
-                            <a href="#" class="w-tags-item">Business</a>
-                            <a href="#" class="w-tags-item">Optimization</a>
-                            <a href="#" class="w-tags-item">Digital Marketing</a>
-                            <a href="#" class="w-tags-item">Social</a>
-                            <a href="#" class="w-tags-item">Keyword</a>
-                            <a href="#" class="w-tags-item">Strategy</a>
-                            <a href="#" class="w-tags-item">Audience</a>
+                           
+                           @foreach($tags as $tag)
+                           
+                               <a href="#" class="w-tags-item">{{ $tag->tag }}</a>
+                           
+                           @endforeach
+                            
                         </div>
                     </div>
                 </aside>

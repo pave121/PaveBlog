@@ -6,7 +6,7 @@ use Session;
 use Illuminate\Http\Request;
 use App\Category;
 
-class CategoriesController extends Controller
+class CategoriesController extends BaseController
 {
     /**
      * Display a listing of the resource.

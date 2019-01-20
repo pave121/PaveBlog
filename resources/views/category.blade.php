@@ -61,7 +61,7 @@
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                 <div class="case-item" style="height:400px; padding-bottom:15px;">
                                     <div class="case-item__thumb">
-                                        <img src="{{ $post->featured }}" alt="our case">
+                                        <img src="{{ $post->featured }}" alt="our case" style="height:200px;">
                                     </div>
                                     <h6 class="case-item__title text-center"><a href="{{ route('post.single', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h6>
                                 </div>
